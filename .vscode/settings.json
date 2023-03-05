@@ -1,0 +1,4 @@
+{
+    "Lua.diagnostics.libraryFiles": "Enable",
+    "Lua.runtime.version": "Lua 5.1"
+}
