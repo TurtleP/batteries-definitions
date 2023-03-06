@@ -55,7 +55,7 @@ functional.remap = functional.map_inplace
 ---local b = { ["a"] = 2,["b"] = 5 }
 ---local c = { ["a"] = 3,["b"] = 6 }
 ---
----local result = async.map_field({ a, b, c }, "b")
+---local result = functional.map_field({ a, b, c }, "b")
 ---  -> result: {4, 5, 6}
 ---```
 ---@param table table Table of tables to iterate
