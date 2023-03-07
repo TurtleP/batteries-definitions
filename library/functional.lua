@@ -49,15 +49,7 @@ functional.remap = functional.map_inplace
 
 ---Maps a sequence. \
 ---This automatically drops any `nil`s to simultaneously map and filter. \
----Example:
----```
----local a = { ["a"] = 1,["b"] = 4 }
----local b = { ["a"] = 2,["b"] = 5 }
----local c = { ["a"] = 3,["b"] = 6 }
----
----local result = functional.map_field({ a, b, c }, "b")
----  -> result: {4, 5, 6}
----```
+---[Open an Example in the Browser](https://google.com)
 ---@param table table Table of tables to iterate
 ---@param key string Key to map to
 ---@return table mapped The newly mapped sequence
@@ -66,27 +58,7 @@ end
 
 ---Maps a sequence by a method call. \
 ---This automatically drops any `nil`s to simultaneously map and filter.
----Example:
----```
----local a = {}
----function a:position()
----    return { 1, 2 }
----end
----
----local b = {}
----function b:position()
----    return { 3, 4 }
----end
----
----function c(element, one, two)
----    return one * two
----end
----
----local seq_a = functional.map_call({ a, b }, "position")
----  -> { { 1, 2 }, { 3, 4 }}
----local seq_b = functional.map_call({ a, b }, c, 1, 2)
----  -> { 2, 2 }
----```
+---[Open an Example in the Browser](https://google.com)
 ---@param table table Table to iterate
 ---@param method string|function Method to map by
 ---@vararg any Arguments to pass
@@ -237,83 +209,83 @@ end
 ---Return whether any table element matches the query.
 ---@param table table Table to iterate
 ---@param callback function Callback declared as `f(table_element, index)`
----@return boolean matching
+---@return boolean matching Whether any of the elements matched the query
 function functional.any(table, callback)
 end
 
 ---Return whether none of the table elements match the query.
 ---@param table table Table to iterate
 ---@param callback function Callback declared as `f(table_element, index)`
----@return boolean none_matching
+---@return boolean none_matching Whether none of the elements matched the query
 function functional.none(table, callback)
 end
 
 ---Return whether all the table elements match the query.
 ---@param table table Table to iterate
 ---@param callback function Callback declared as `f(table_element, index)`
----@return boolean matching
+---@return boolean matching Whether all elements matched the query
 function functional.all(table, callback)
 end
 
 ---Return whether the table contains an element.
 ---@param table table Table to iterate
 ---@param value any The value to check for
----@return boolean found
+---@return boolean found Whether the element was found
 function functional.contains(table, value)
 end
 
 ---Counts the elements of the table that match the query.
 ---@param table table Table to iterate
 ---@param callback function Callback declared as `f(table_element, index)`
----@return integer count
+---@return integer count The count of matching items
 function functional.count(table, callback)
 end
 
 ---Return the numeric sum of all elements in the table.
 ---@param table table The table to iterate
----@return number sum
+---@return number sum The sum of the items in the table
 function functional.sum(table)
 end
 
 ---Return the numeric mean of all elements in the table.
 ---@param table table The table to iterate
----@return number mean
+---@return number mean The mean of the items in the table
 function functional.mean(table)
 end
 
 ---Return the minimum and maximum of the table in one pass. \
 ---This will return zero for both if the table is empty.
 ---@param table table The table to iterate
----@return number min
----@return number max
+---@return number min The minimum element in the table
+---@return number max The maximum element in the table
 function functional.minmax(table)
 end
 
 ---Return the minimum element of the table.
 ---This will return zero if the table is empty.
 ---@param table table
----@return number min
+---@return number min The minimum element in the table
 function functional.min(table)
 end
 
 ---Return the maximum element of the table.
 ---This will return zero if the table is empty.
 ---@param table table
----@return number max
+---@return number max The maximum element in the table
 function functional.max(table)
 end
 
 ---Return the element that results in the lowest numeric value.
 ---@param table table The table to iterate
 ---@param callback function Callback declared as `f(table_element, index)`
----@return number min
+---@return number min The lowest numeric value in the table
 function functional.find_min(table, callback)
 end
 
 ---Return the element that results in the greatest numeric value.
 ---@param table table The table to iterate
 ---@param callback function Callback declared as `f(table_element, index)`
----@return number max
+---@return number max The greatest numeric value in the table
 function functional.find_max(table, callback)
 end
 
@@ -325,13 +297,14 @@ functional.find_best = functional.find_max
 ---@param table table The table to iterate
 ---@param callback function Callback declared as `f(table_element, index)`
 ---@param target number The target reference number
----@return number nearest
+---@return number nearest The nearest numerical value to the target value
 function functional.find_nearest(table, callback, target)
 end
 
 ---Return the first element that results in a truthy value.
 ---@param table table Table to iterate
 ---@param callback function Callback declared as `f(table_element)`
+---@return any value The matching element
 function functional.find_match(table, callback)
 end
 
