@@ -1,6 +1,6 @@
 ---@meta
 
----@class identifier
+---@class batteries.identifier
 local identifier = {}
 
 ---Generates a version 4 UUID. \

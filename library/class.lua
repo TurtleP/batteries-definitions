@@ -1,13 +1,13 @@
 ---@meta
 
----@class class
----@operator call(table|nil): class
+---@class batteries.class
+---@operator call(table|nil): batteries.class
 ---@field __id   integer unique generated id
 ---@field __type string  the class name for type calls
 local class = {}
 
 ---Checks if a class is of a specified type.
----@param type class class to check against
+---@param type batteries.class class to check against
 ---@return boolean is_of_type Whether this class is the type of @type
 function class:is(type)
 end

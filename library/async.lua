@@ -1,7 +1,7 @@
 ---@meta
 
----@class _async
----@operator call(): _async Creates a new async kernel
+---@class batteries.async
+---@operator call(): batteries.async Creates a new async kernel
 local async = {}
 
 ---Adds a task to the kernel.

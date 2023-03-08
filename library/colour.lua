@@ -1,6 +1,6 @@
 ---@meta
 
----@class colour
+---@class batteries.colour
 local colour = {}
 
 ---Pack R, G, B into a single value.

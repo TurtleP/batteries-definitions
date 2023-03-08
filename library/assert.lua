@@ -1,6 +1,6 @@
 ---@meta
 
----@class assert
+---@class batteries.assert
 local assert = {}
 
 ---Asserts a value is not nil.

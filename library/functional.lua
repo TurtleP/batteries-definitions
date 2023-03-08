@@ -1,6 +1,6 @@
 ---@meta
 
----@class functional
+---@class batteries.functional
 local functional = {}
 
 ---Returns the identity of a value.
