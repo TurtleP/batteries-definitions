@@ -49,7 +49,7 @@ functional.remap = functional.map_inplace
 
 ---Maps a sequence. \
 ---This automatically drops any `nil`s to simultaneously map and filter. \
----[Open an Example in the Browser](https://google.com)
+---[Open an Example in the Browser](https://github.com/1bardesign/batteries-examples/blob/master/functional.lua#L33-L39)
 ---@param table table Table of tables to iterate
 ---@param key string Key to map to
 ---@return table mapped The newly mapped sequence
@@ -58,7 +58,7 @@ end
 
 ---Maps a sequence by a method call. \
 ---This automatically drops any `nil`s to simultaneously map and filter.
----[Open an Example in the Browser](https://google.com)
+---[Open an Example in the Browser](https://github.com/1bardesign/batteries-examples/blob/master/functional.lua#L41-L53)
 ---@param table table Table to iterate
 ---@param method string|function Method to map by
 ---@vararg any Arguments to pass
@@ -97,7 +97,8 @@ end
 function functional.remove_if(table, callback)
 end
 
----Paritions a sequence into two, based on filter criteria.
+---Paritions a sequence into two, based on filter criteria. \
+---[Open an Example in the Browser](https://github.com/1bardesign/batteries-examples/blob/master/functional.lua#L106-L110)
 ---@param table table Table to iterate
 ---@param callback function Callback declared as `f(table_element, index)`
 ---@return table sequence_one First partition
@@ -115,8 +116,8 @@ function functional.group_by(table, callback)
 end
 
 ---Zips two sequences together into a new table, based on a callback. \
----Iteration is limited by min(#table_one, #table_two). \
----`nil` results are ignored.
+---Iteration is limited by min(#table_one, #table_two); `nil` results are ignored. \
+---[Open an Example in the Browser](https://github.com/1bardesign/batteries-examples/blob/master/functional.lua#L111-L113)
 ---@param table_one table The first table to zip
 ---@param table_two table The second table to zip
 ---@param callback function Callback declared as `f(table_one_element, table_two_element, index)`
