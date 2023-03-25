@@ -1,7 +1,7 @@
 ---@meta
 
 ---@class batteries
-local batteries = {}
+batteries = {}
 
 ---Export all modules globally if required
 function batteries:export()
