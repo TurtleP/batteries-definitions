@@ -47,4 +47,13 @@ end
 function assert:type_or_nil(value, type, message, stack_level)
 end
 
+---Asserts that @value is one of the items in @options.
+---@param value any
+---@param options table
+---@param message string
+---@param stack_level integer
+---@return any value Value that was checked, for chaining
+function assert:one_of(value, options, message, stack_level)
+end
+
 return assert

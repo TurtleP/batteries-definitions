@@ -13,7 +13,7 @@ function class:is(type)
 end
 
 ---Perform a partial super construction for an instance. \
----This is called when a new class instance is constructed.
+---This must be called when a new class instance is constructed via inheritance.
 ---@vararg any
 function class:super(...)
 end
