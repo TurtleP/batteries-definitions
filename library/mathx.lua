@@ -175,3 +175,59 @@ function batteries.mathx.normalise_angle(angle)
 end
 
 batteries.mathx.normalize_angle = batteries.mathx.normalise_angle
+
+---Get the normalised difference between two angles. \
+---The two angles do not require to be normalised.
+---@param a number The first angle
+---@param b number The second angle
+---@return number difference The normalised difference of the angles
+function batteries.mathx.angle_difference(a, b)
+end
+
+---Linearly interpolate the difference between two angles.
+---@param a number The first angle
+---@param b number The second angle
+---@param time number The time to interpolate over
+---@return number difference The normalised difference of the angles
+function batteries.mathx.lerp_angle(a, b, time)
+end
+
+---Linearly interpolate the difference between two angles.
+---This is useful to make sure dynamic lerps reach their target.
+---@param a number The first angle
+---@param b number The second angle
+---@param time number The time to interpolate over
+---@param eps number The minimum final step
+---@return number difference The normalised difference of the angles
+function batteries.mathx.lerp_angle_eps(a, b, time, eps)
+end
+
+----
+--- Geometric functions standalone/"unpacked" components and multi-return
+--- Consider using vec2 if you need anything complex!
+----
+
+---Rotate a point around the origin by an angle.
+---@param x number The x-coordinate
+---@param y number The y-coordinate
+---@param angle number The angle to rotate on
+---@return number x The rotated x-coordinate
+---@return number y The rotated y-coordinate
+function batteries.mathx.rotate(x, y, angle)
+end
+
+---Gets the length of a vector from its origin.
+---@param x number The x-coordinate
+---@param y number The y-coordinate
+---@return number length The length of the vector
+function batteries.mathx.length(x, y)
+end
+
+---Gets the distance between two points.
+---@param x1 number The x-coordinate of the first point
+---@param y1 number The y-coordinate of the first point
+---@param x2 number The x-coordinate of the second point
+---@param y2 number The y-coordinate of the second point
+---@return number distance The distance between the two points
+function batteries.mathx.distance(x1, y1, x2, y2)
+end
