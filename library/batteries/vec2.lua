@@ -1,4 +1,6 @@
 ---@meta
 
 ---@class batteries.vec2
-batteries.vector2 = {}
+local vector2 = {}
+
+return vector2
