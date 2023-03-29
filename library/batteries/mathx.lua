@@ -1,7 +1,7 @@
 ---@meta
 
 ---Extra mathematical functions
----@class batteries.mathx
+---@class batteries.mathx : mathlib
 local mathx = {}
 
 ---Wraps @value around the range.

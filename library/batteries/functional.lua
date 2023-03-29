@@ -1,7 +1,7 @@
 ---@meta
 
 ---Functional programming facilities
----@class batteries.functional
+---@class batteries.functional : batteries.mathx
 local functional = {}
 
 ---Returns the identity of a value.

@@ -1,7 +1,7 @@
 ---@meta
 
 ---Simple kernel for async tasks running in the background.
----@class batteries.async
+---@class batteries.async : batteries.class
 ---@operator call(): batteries.async Creates a new batteries.async kernel
 local async = {}
 
