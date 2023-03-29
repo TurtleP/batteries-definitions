@@ -41,6 +41,7 @@ batteries.measure = require("batteries.measure")
 batteries.make_pooled = require("batteries.make_pooled")
 
 ---Export all modules globally if required
+---@return batteries
 function batteries:export()
 end
 
