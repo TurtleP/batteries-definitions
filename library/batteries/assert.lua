@@ -2,14 +2,14 @@
 
 ---Various intuitive assertions
 ---@class batteries.assert
-batteries.assert = {}
+local assert = {}
 
 ---batteries.Asserts a value is not nil.
 ---@param value any Value to check
 ---@param message? string Error details message (default `""`)
 ---@param stack_level? integer Error message stack level (default `0`)
 ---@return any value Value that was checked, for chaining
-function batteries.assert:some(value, message, stack_level)
+function assert:some(value, message, stack_level)
 end
 
 ---batteries.Asserts two values are equal.
@@ -18,7 +18,7 @@ end
 ---@param message? string Error details message (default `""`)
 ---@param stack_level? integer Error message stack level (default `0`)
 ---@return any a Value that was checked, for chaining
-function batteries.assert:equal(a, b, message, stack_level)
+function assert:equal(a, b, message, stack_level)
 end
 
 ---batteries.Asserts two values are **not** equal.
@@ -27,7 +27,7 @@ end
 ---@param message? string Error details message (default `""`)
 ---@param stack_level? integer Error message stack level (default `0`)
 ---@return any a Value that was checked, for chaining
-function batteries.assert:not_equal(a, b, message, stack_level)
+function assert:not_equal(a, b, message, stack_level)
 end
 
 ---batteries.Asserts that @value is of type @type.
@@ -36,7 +36,7 @@ end
 ---@param message? string Error details message (default `""`)
 ---@param stack_level? integer Error message stack level (default `0`)
 ---@return any value Value that was checked, for chaining
-function batteries.assert:type(value, type, message, stack_level)
+function assert:type(value, type, message, stack_level)
 end
 
 ---batteries.Asserts that @value is of type @type or `nil`.
@@ -45,7 +45,7 @@ end
 ---@param message? string Error details message (default `""`)
 ---@param stack_level? integer Error message stack level (default `0`)
 ---@return any value Value that was checked, for chaining
-function batteries.assert:type_or_nil(value, type, message, stack_level)
+function assert:type_or_nil(value, type, message, stack_level)
 end
 
 ---batteries.Asserts that @value is one of the items in @options.
@@ -54,5 +54,7 @@ end
 ---@param message string
 ---@param stack_level integer
 ---@return any value Value that was checked, for chaining
-function batteries.assert:one_of(value, options, message, stack_level)
+function assert:one_of(value, options, message, stack_level)
 end
+
+return assert

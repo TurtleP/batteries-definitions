@@ -2,7 +2,7 @@
 
 ---Geometric intersection routines
 ---@class batteries.intersect
-batteries.intersect = {}
+local intersect = {}
 
 -----------
 --- Circles
@@ -13,7 +13,7 @@ batteries.intersect = {}
 ---@param radius number The circle's radius
 ---@param point batteries.vec2 The point to check
 ---@return boolean overlapping Whether the point overlaps the circle
-function batteries.intersect.circle_point_overlap(position, radius, point)
+function intersect.circle_point_overlap(position, radius, point)
 end
 
 ---Check if a circle overlaps another circle.
@@ -22,7 +22,7 @@ end
 ---@param b_position batteries.vec2 The second circle's position
 ---@param b_radius number The second circle's radius
 ---@return boolean overlapping Whether the two circles overlap
-function batteries.intersect.circle_circle_overlap(a_position, a_radius, b_position, b_radius)
+function intersect.circle_circle_overlap(a_position, a_radius, b_position, b_radius)
 end
 
 ---Check if a point collides with a circle.
@@ -31,7 +31,7 @@ end
 ---@param point batteries.vec2 The point to check
 ---@param separation? batteries.vec2 The separation distance between the circle and point (default `batteries.vec2(0)`)
 ---@return boolean colliding Whether the point and circle are colliding
-function batteries.intersect.circle_point_collide(a_position, a_radius, point, separation)
+function intersect.circle_point_collide(a_position, a_radius, point, separation)
 end
 
 ---Check if two circles collide.
@@ -41,7 +41,7 @@ end
 ---@param b_radius number The second circle's radius
 ---@param separation? batteries.vec2 The separation distance between the circles (default `batteries.vec2(0)`)
 ---@return boolean colliding Whether the circles are colliding
-function batteries.intersect.circle_circle_collide(a_position, a_radius, b_position, b_radius, separation)
+function intersect.circle_circle_collide(a_position, a_radius, b_position, b_radius, separation)
 end
 
 -----------------
@@ -54,7 +54,7 @@ end
 ---@param point batteries.vec2 The point to reference
 ---@param separation? batteries.vec2 The separation distance between the points (default `batteries.vec2(0)`)
 ---@return batteries.vec2 closest The nearest point on the line from the reference point
-function batteries.intersect.nearest_point_on_line(line_start, line_end, point, separation)
+function intersect.nearest_point_on_line(line_start, line_end, point, separation)
 end
 
 ---Check if a line segment overlaps with a circle.
@@ -64,7 +64,7 @@ end
 ---@param position batteries.vec2 The circle's position
 ---@param radius number The circle's radius
 ---@return boolean overlapping Whether the line segment overlaps the circle
-function batteries.intersect.line_circle_overlap(line_start, line_end, line_radius, position, radius)
+function intersect.line_circle_overlap(line_start, line_end, line_radius, position, radius)
 end
 
 ---Check if a line segment collides with a circle.
@@ -75,7 +75,7 @@ end
 ---@param radius number The circle's radius
 ---@param separation? batteries.vec2 The separation distance between the line and circle (default `batteries.vec2(0)`)
 ---@return boolean colliding Whether the line and circle are colliding
-function batteries.intersect.line_circle_collide(line_start, line_end, line_radius, position, radius, separation)
+function intersect.line_circle_collide(line_start, line_end, line_radius, position, radius, separation)
 end
 
 ---Checks if two line segments are colliding.
@@ -87,7 +87,7 @@ end
 ---@param b_radius number The line radius of the second line segment
 ---@param separation? batteries.vec2 The separation distance between the lines (default `batteries.vec2(0)`)
 ---@return boolean colliding Whether the two lines are colliding
-function batteries.intersect.line_line_collide(a_start, a_end, a_radius, b_start, b_end, b_radius, separation)
+function intersect.line_line_collide(a_start, a_end, a_radius, b_start, b_end, b_radius, separation)
 end
 
 ----------------
@@ -99,7 +99,7 @@ end
 ---@param half_size batteries.vec2 Half-size dimensions of the box
 ---@param point batteries.vec2 The point to check
 ---@return boolean overlapping Whether the bounding box overlaps the point
-function batteries.intersect.aabb_point_overlap(position, half_size, point)
+function intersect.aabb_point_overlap(position, half_size, point)
 end
 
 ---Check if a bounding box collides with a given point.
@@ -108,7 +108,7 @@ end
 ---@param point batteries.vec2 The point to check
 ---@param separation? batteries.vec2 The separation distance between the bounding box and point (default `batteries.vec2(0)`)
 ---@return boolean colliding Whether the bounding box collides with the point
-function batteries.intersect.aabb_point_collide(position, half_size, point, separation)
+function intersect.aabb_point_collide(position, half_size, point, separation)
 end
 
 ---Check if a bounding box overlaps a given bounding box.
@@ -117,7 +117,7 @@ end
 ---@param b_position batteries.vec2 Center position of the second bounding box
 ---@param b_half_size batteries.vec2 Half-size dimensions of the second bounding box
 ---@return boolean overlapping Whether the bounding boxes overlap
-function batteries.intersect.aabb_aabb_overlap(a_position, a_half_size, b_position, b_half_size)
+function intersect.aabb_aabb_overlap(a_position, a_half_size, b_position, b_half_size)
 end
 
 ---Check if a bounding box collides with a given bounding box.
@@ -127,7 +127,7 @@ end
 ---@param b_half_size batteries.vec2 Half-size dimensions of the second bounding box
 ---@param separation? batteries.vec2 The separation distance between the bounding box and point (default `batteries.vec2(0)`)
 ---@return boolean overlapping Whether the bounding boxes overlap
-function batteries.intersect.aabb_aabb_collide(a_position, a_half_size, b_position, b_half_size, separation)
+function intersect.aabb_aabb_collide(a_position, a_half_size, b_position, b_half_size, separation)
 end
 
 ---Clamps a point to a bounding box.
@@ -136,7 +136,7 @@ end
 ---@param point batteries.vec2 The point to check
 ---@param separation? batteries.vec2 The separation distance between the bounding box and point (default `batteries.vec2(0)`)
 ---@return batteries.vec2 clamped_point The clamped point
-function batteries.intersect.aabb_point_clamp(position, half_size, point, separation)
+function intersect.aabb_point_clamp(position, half_size, point, separation)
 end
 
 ---Checks if a bounding box overlaps a circle.
@@ -145,7 +145,7 @@ end
 ---@param circle_position batteries.vec2 The position of the circle
 ---@param radius number The circle's radius
 ---@return boolean overlapping Whether the bounding box overlaps the circle
-function batteries.intersect.aabb_circle_overlap(position, half_size, circle_position, radius)
+function intersect.aabb_circle_overlap(position, half_size, circle_position, radius)
 end
 
 ---Checks if a bounding box overlaps a circle.
@@ -155,7 +155,7 @@ end
 ---@param radius number The circle's radius
 ---@param separation? batteries.vec2 The separation distance between the bounding box and point (default `batteries.vec2(0)`)
 ---@return boolean overlapping Whether the bounding box overlaps the circle
-function batteries.intersect.aabb_circle_collide(position, half_size, circle_position, radius, separation)
+function intersect.aabb_circle_collide(position, half_size, circle_position, radius, separation)
 end
 
 ---Converts a raw x, y, width, height rectangle to aabb batteries.vectors
@@ -165,7 +165,7 @@ end
 ---@param height number The height component
 ---@return batteries.vec2 position The center position of the bounding box
 ---@return batteries.vec2 half_size The half-size of the bounding box
-function batteries.intersect.rect_raw_to_aabb(x, y, width, height)
+function intersect.rect_raw_to_aabb(x, y, width, height)
 end
 
 ---Converts a rectangle to aabb batteries.vectors.
@@ -173,14 +173,14 @@ end
 ---@param size {x: number, y: number}
 ---@return batteries.vec2 position The center position of the bounding box
 ---@return batteries.vec2 half_size The half-size of the bounding box
-function batteries.intersect.rect_to_aabb(position, size)
+function intersect.rect_to_aabb(position, size)
 end
 
 ---Checks if a point is inside of a polygon. \
 ---This is based on the winding number, so re-intersecting areas are counted as solid rather than inverting.
 ---@param point batteries.vec2 The point to check
 ---@param polygon batteries.vec2[] List of batteries.vectors for the polygon
-function batteries.intersect.point_in_poly(point, polygon)
+function intersect.point_in_poly(point, polygon)
 end
 
 ----------------------
@@ -190,7 +190,7 @@ end
 ---Reverses if there is a batteries.vector, preserving when false
 ---@param result batteries.vec2
 ---@return batteries.vec2? result
-function batteries.intersect.reverse_msv(result)
+function intersect.reverse_msv(result)
 end
 
 ---Checks if a point and a circle overlap.
@@ -198,7 +198,7 @@ end
 ---@param position batteries.vec2 The circle's position
 ---@param radius number The circle's radius
 ---@return boolean overlapping Whether the point and circle are overlapping
-function batteries.intersect.point_circle_overlap(point, position, radius)
+function intersect.point_circle_overlap(point, position, radius)
 end
 
 ---Checks if a point and a circle collide.
@@ -207,7 +207,7 @@ end
 ---@param radius number The circle's radius
 ---@param separation? batteries.vec2 The separation distance between the bounding box and point (default `batteries.vec2(0)`)
 ---@return boolean colliding Whether the point and circle are colliding
-function batteries.intersect.point_circle_collide(point, position, radius, separation)
+function intersect.point_circle_collide(point, position, radius, separation)
 end
 
 ---Checks if a point overlaps with a bounding box.
@@ -215,7 +215,7 @@ end
 ---@param position batteries.vec2 Center position of the box
 ---@param half_size batteries.vec2 Half-size dimensions of the box
 ---@return boolean overlapping Whether the point overlaps with the bounding box
-function batteries.intersect.point_aabb_overlap(point, position, half_size)
+function intersect.point_aabb_overlap(point, position, half_size)
 end
 
 ---Checks if a point collides with a bounding box.
@@ -224,7 +224,7 @@ end
 ---@param half_size batteries.vec2 Half-size dimensions of the box
 ---@param separation? batteries.vec2 The separation distance between the bounding box and point (default `batteries.vec2(0)`)
 ---@return boolean overlapping Whether the point collides with the bounding box
-function batteries.intersect.point_aabb_collide(point, position, half_size, separation)
+function intersect.point_aabb_collide(point, position, half_size, separation)
 end
 
 ---Checks if a circle overlaps with a bounding box.
@@ -233,7 +233,7 @@ end
 ---@param box_position batteries.vec2 Center position of the box
 ---@param half_size batteries.vec2 Half-size dimensions of the box
 ---@return boolean overlapping Whether the circle overlaps with the bounding box
-function batteries.intersect.circle_aabb_overlap(position, radius, box_position, half_size)
+function intersect.circle_aabb_overlap(position, radius, box_position, half_size)
 end
 
 ---Checks if a circle collides with a bounding box.
@@ -243,7 +243,7 @@ end
 ---@param half_size batteries.vec2 Half-size dimensions of the box
 ---@param separation? batteries.vec2 The separation distance between the bounding box and point (default `batteries.vec2(0)`)
 ---@return boolean colliding Whether the circle collides with the bounding box
-function batteries.intersect.circle_aabb_collide(position, radius, box_position, half_size, separation)
+function intersect.circle_aabb_collide(position, radius, box_position, half_size, separation)
 end
 
 ---Checks if a circle collides with a line.
@@ -254,7 +254,7 @@ end
 ---@param line_radius number The line's radius
 ---@param separation? batteries.vec2 The separation distance between the bounding box and point (default `batteries.vec2(0)`)
 ---@return boolean colliding Whether the circle collides with the line
-function batteries.intersect.circle_line_collide(position, radius, line_start, line_end, line_radius, separation)
+function intersect.circle_line_collide(position, radius, line_start, line_end, line_radius, separation)
 end
 
 ----------------------
@@ -269,7 +269,7 @@ end
 ---@param b_position batteries.vec2 The second body position
 ---@param separation? batteries.vec2 The separation distance between the two bodies (default `batteries.vec2(0)`)
 ---@param balance? number The movement to resolve (default `0.5`), between [0, 1]
-function batteries.intersect.resolve_msv(a_position, b_position, separation, balance)
+function intersect.resolve_msv(a_position, b_position, separation, balance)
 end
 
 ---Gets a normalized balanced factor from two mass inputs. \
@@ -277,7 +277,7 @@ end
 ---@param first number The first mass value
 ---@param second number The second mass value
 ---@return number balance The calculated balance
-function batteries.intersect.balance_from_mass(first, second)
+function intersect.balance_from_mass(first, second)
 end
 
 ---Bounce a velocity of a normal vector (modifying the velocity in the process). \
@@ -286,7 +286,7 @@ end
 ---@param normal batteries.vec2 The normalized vector
 ---@param conservation? number The dampening of the velocity (default `1`)
 ---@return number velocity The resulting velocity vector
-function batteries.intersect.bounce_off(velocity, normal, conservation)
+function intersect.bounce_off(velocity, normal, conservation)
 end
 
 ---Bounce two similar bodies off each other, transferring energy.
@@ -294,7 +294,7 @@ end
 ---@param velocity_b batteries.vec2 The second velocity vector
 ---@param normal batteries.vec2 The normalized vector
 ---@param conservation? number The dampening of the velocity (default `1`)
-function batteries.intersect.mutual_bounce(velocity_a, velocity_b, normal, conservation)
+function intersect.mutual_bounce(velocity_a, velocity_b, normal, conservation)
 end
 
 return intersect
